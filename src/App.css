@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+
+.card.flipped .card-front {
+    opacity:0;
+    transform: scale(0.9);
+    cursor: default
+}
+.card-back {
+    opacity:1;
+}
+.card.matched .card-back{
+    background: rgba(126, 211, 33, 0.2);
+    box-shadow: 0 0 20px rgba(126, 211, 33, 0.5);
+    border: 2px solid rgba(126, 211, 33, 0.5);
+}
+.card:hover:not(.matched):not(.flipped) .card-front{
+    transform: scale(1.05);
+}
+.card:active:not(.matched){
+    transform: scale(0.95);
+}
