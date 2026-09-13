@@ -30,10 +30,10 @@ export const useGameLogic = (cardValues:string[]) => {
           isMatched: false,
         }));
         setIsLocked(false);
+        setMetchedCards([]);
         setCards(finalCards);
         setMoves(0);
-        setScore(0);
-        isGameComplete = false;
+        setScore(0)
       };
     
       useEffect(() => {
@@ -92,7 +92,7 @@ export const useGameLogic = (cardValues:string[]) => {
           setMoves((prev) => (prev+1))
         }
       }
-      let isGameComplete = matchedCards.length === cardValues.length;
-      
+      const isGameComplete = matchedCards.length === cardValues.length;
+      console.log(cards)
     return {cards, score, moves, isGameComplete, initializeGame, handleCardClick}
 }
